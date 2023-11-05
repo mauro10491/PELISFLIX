@@ -5,7 +5,7 @@
           [ngClass]="{active:i===1}">
           <img src="https://image.tmdb.org/t/p/original/{{ b.backdrop_path }}" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h2>{{b.original_title}}</h2>
+            <h2>{{b.original_title}} {{b.name}}</h2>
             <p>{{b.overview}}</p>
           </div>
         </div>
