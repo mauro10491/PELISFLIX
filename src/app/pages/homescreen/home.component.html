@@ -7,7 +7,6 @@
           <div class="carousel-caption d-none d-md-block">
             <h2>{{b.original_title}}  {{ b.name }}</h2>
             <p>{{b.overview}}</p>
-            <p>37:27</p>
           </div>
         </div>
       </div>
@@ -21,3 +20,17 @@
       </button>
     </div>
   </div>
+
+<div class="contain mt-3 p-3">
+
+  <!--Trending movies-->
+  <div class="row">
+    <h5 class="text-white">Trending Movies</h5>
+    <div class="rowposter">
+      <ng-container *ngFor="let t of trendingMovieResult">
+        <img src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}" class="rowimg largeposter" alt="...">
+      </ng-container>
+    </div>
+  </div>
+
+</div>

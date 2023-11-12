@@ -14,3 +14,14 @@
 .carousel-caption p{
     color: #ffffff;
 }
+
+.rowposter{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.rowimg{
+    max-height: 200px;
+    object-fit: contain;
+}
