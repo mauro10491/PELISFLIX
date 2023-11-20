@@ -27,6 +27,7 @@
     width: 100%;
     box-sizing: content-box;
     transition: transform 450ms;
+    margin-right: 5px;
 }
 
 .rowimg:hover{
