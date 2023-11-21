@@ -34,4 +34,34 @@ export class MovieApiServiceService {
   movieCast(data:any):Observable<any>{
     return this.http.get(`${this.baseurl}/movie/${data}/credits?api_key=${this.apikey}`);
   }
+
+  // movies por categoria
+
+  actionMovies():Observable<any>{
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=28`);
+  }
+
+  animationMovies():Observable<any>{
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=16`);
+  }
+
+  adventureMovies():Observable<any>{
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=12`);
+  }
+
+  comedyMovies():Observable<any>{
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=35`);
+  }
+
+  documentaryMovies():Observable<any>{
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=99`);
+  }
+
+  scienceFictionMovies():Observable<any>{
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=878`);
+  }
+
+  thrillerMovies():Observable<any>{
+    return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=53`);
+  }
 }
