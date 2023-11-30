@@ -5,9 +5,10 @@
         </div>
         <div class="col-lg-10 mt-5 p-4">
             <h1 class="mt-2 mb-2">{{ movieDetailsResult.original_title }}</h1>
+            <h1 class="mt-2 mb-2">{{ movieDetailsResult.id | currency:'COL'}}</h1>
             <p mt-3 mb-4>{{ movieDetailsResult.overview }}</p>
             <a class="btn btn-md" href="https://www.themoviedb.org/video/play?key={{movieVideoResults}}">Watch trailer</a>
-
+            <a class="btn btn-md m-3" (click)="agregarCarrito(movieDetailsResult.original_title, movieDetailsResult.id)">Agregar al carrito</a>
             <div class="mt-4">
                 <h2 class="text-white">Top Cast</h2>
                 <div class="row">
@@ -27,3 +28,5 @@
         </div>
     </div>
 </div>
+
+

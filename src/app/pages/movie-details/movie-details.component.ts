@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MovieApiServiceService } from 'src/app/service/movie-api-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { CartComponent } from '../cart/cart.component'; 
+import { LocalStorageServiceService } from 'src/app/service/local-storage-service.service';
 
 @Component({
   selector: 'app-movie-details',
@@ -9,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MovieDetailsComponent {
 
-  constructor(private service: MovieApiServiceService, private router: ActivatedRoute){}
+  constructor(private service: MovieApiServiceService, private router: ActivatedRoute, private localStorageService: LocalStorageServiceService){}
 
   movieDetailsResult:any;
   movieVideoResults:any;
@@ -25,7 +27,7 @@ export class MovieDetailsComponent {
 
   getMovie(id:any){
     this.service.movieDetails(id).subscribe((data) => {
-      console.log(data);
+      console.log(data, "Get Movie Data");
       this.movieDetailsResult = data;
       
     });
@@ -48,6 +50,16 @@ export class MovieDetailsComponent {
       console.log(data);
       this.movieCastResults = data.cast; 
     });
+  }
+
+  agregarCarrito(name:any, price:number){
+    console.log(name, price);
+    this.localStorageService.agregarAlCarrito({
+      name: name,
+      price: price
+    });
+    return false;
+    
   }
 
 
